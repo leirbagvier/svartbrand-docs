@@ -1,0 +1,193 @@
+FORMAT: 1A
+HOST: http://svartbrand.ccb.org.br/api/v1
+
+# Svartbrand API
+
+Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Svartbrand*;
+
+## Resultados de Ensaios [/results]
+
+### results.index [GET /results]
+
++ Request (application/json)
+    
+    + Headers
+            
+            Authorization: "Bearer <token>"
+    
+    + Attributes
+        + data_conclusao_begin: dd/mm/yyyy (string, optional)
+        + data_conclusao_end: dd/mm/yyyy (string, optional)
+        + modalidade: AV (string, optional) - sendo [AV] Avulso | [CV] Convênio | [AS] Assistência Técnica | [CT] Certificação | [PD] Pesquisa & Desenvolvimento
+
+    + Body
+
+            {
+                "data_conclusao_begin": "20/05/2017",
+                "data_conclusao_end": "20/05/2017",
+                "modalidade": "AV"
+            }
+
++ Response 200 (application/json)
+
+        [
+            {
+                "data":[
+                    {
+                        "registro":"02292/17",
+                        "prod_marca":"Elizabeth",
+                        "prod_ref":"HD Basalto Noce",
+                        "modalidade":"Avulso",
+                        "data_saida":"25/02/2017",
+                        "pdf":"<PDF File Content>"
+                    },{
+                        "registro":"02193/17",
+                        "prod_marca":"Elizabeth",
+                        "prod_ref":"HD Basalto Noce",
+                        "modalidade":"Convênio",
+                        "data_saida":"20/03/2017",
+                        "pdf":"<PDF File Content>"
+                    },{
+                        "registro":"00390/17",
+                        "prod_marca":"Elizabeth",
+                        "prod_ref":"HD Basalto Noce",
+                        "modalidade":"Avulso",
+                        "data_saida":"10/05/2017",
+                        "pdf":"<PDF File Content>"
+                    }
+                ]
+            }
+        ]
+
+## Solicitações de Ensaios [/requests]
+
+### requests.index [GET /requests]
+
++ Request (application/json)
+    
+    + Headers
+            
+            Authorization: "Bearer <token>"
+    
+    + Attributes
+        + data_solicitacao_begin: dd/mm/yyyy (string, optional)
+        + data_solicitacao_end: dd/mm/yyyy (string, optional)
+        + status: 1 (number, optional) - sendo [1] Aguardando amostras | [2] Aguardando conferência | [3] Em execução | [4] Aguardando análise | [5] Finalizado
+
+    + Body
+
+            {
+                "data_solicitacao_begin": "20/05/2017",
+                "data_solicitacao_end": "20/05/2017",
+                "status": 2
+            }
+
++ Response 200 (application/json)
+
+        {
+            "data":[
+                {
+                    "id":"0229217",
+                    "registro":"02292/17",
+                    "prod_marca":"Elizabeth",
+                    "prod_ref":"HD Basalto Noce",
+                    "modalidade":"Avulso",
+                    "data_solicitacao":"25/02/2017",
+                    "status":"Em execução",
+                    "pdf":"<PDF File Content>"
+                },{
+                    "id":"0219317",
+                    "registro":"02193/17",
+                    "prod_marca":"Elizabeth",
+                    "prod_ref":"HD Basalto Noce",
+                    "modalidade":"Convênio",
+                    "data_solicitacao":"20/03/2017",
+                    "status":"Finalizado",
+                    "pdf":"<PDF File Content>"
+                },{
+                    "id":"0039017",
+                    "registro":"00390/17",
+                    "prod_marca":"Elizabeth",
+                    "prod_ref":"HD Basalto Noce",
+                    "modalidade":"Avulso",
+                    "data_solicitacao":"10/05/2017",
+                    "status":"Aguardando amostras",
+                    "pdf":"<PDF File Content>"
+                }
+            ]
+        }
+
+### requests.store [POST /requests]
+
++ Request (application/json)
+    
+    + Headers
+            
+            Authorization: "Bearer <token>"
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+                "id": "0254817",
+                "registro": "02548/17",
+                "pdf": "<pdf content>"
+            }
+
+### requests.show [GET /requests/{id}]
+
++ Request (application/json)
+    
+    + Headers
+            
+            Authorization: "Bearer <token>"
+
++ Response 200 (application/json)
+
+        {
+            "data":{
+                "id": "0229217",
+                "registro": "02292/17",
+                "empresa": {
+                    "cnpj": "00.000.000/0001-07",
+                    "razaosocial": "Cedasa Pisos e revestimentos Ltda"
+                },
+                "prod_marca": "Elizabeth",
+                "prod_ref": "HD Basalto Noce",
+                "modalidade": "Avulso",
+                "data_solicitacao": "01/02/2017",
+                "data_entrada": "10/02/2017",
+                "data_abertura": "12/02/2017",
+                "data_inicio": "23/02/2017",
+                "data_conclusao": "15/03/2017",
+                "data_saida": null,
+                "solicitante": "Fulano de Tal da Silva",
+                "status": "Em execução",
+                "ensaios":[
+                    {
+                        "desc": "Determinação da Expansão por Umidade",
+                        "norma": "NBR 13.818/97 - Anexo X",
+                        "status": "Em andamento",
+                        "data_conclusao": null
+                    },
+                    {
+                        "desc": "Determinação da Resistencia ao Manchamento",
+                        "norma": "NBR 13.818/97 - Anexo Y",
+                        "status": "Concluído",
+                        "data_conclusao": "10/03/2017"
+                    },
+                    {
+                        "desc": "Determinação da Resistencia ao Ataque Químico",
+                        "norma": "NBR 13.818/97 - Anexo Z",
+                        "status": "Concluído",
+                        "data_conclusao": "11/03/2017"
+                    }
+                ],
+                "pdf": "<PDF File Content>"
+            }
+        }
