@@ -212,3 +212,39 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
                 "pdf": "<PDF File Content>"
             }
         }
+
+## Amostras [/amostras]
+
+### amostras.search [GET /amostras]
+
++ Request (application/json)
+    
+    + Headers
+            
+            Authorization: "Bearer <token>"
+    
+    + Attributes
+        + cod_empresa: 00000000000000 (string, required)
+
+    + Body
+
+            {
+                "cod_empresa": "00000000000000",
+            }
+
++ Response 200 (application/json)
+
+        {
+            "data":[
+                {
+                    "id":"29217",
+                    "dsc":"HD Piazza Italia (Embramaco)"
+                },{
+                    "id":"9517",
+                    "dsc":"HD Piazza le Franc (Embramaco)"
+                },{
+                    "id":"3577",
+                    "dsc":"Porcelanato Polido Bege (Esther)"
+                }
+            ]
+        }
