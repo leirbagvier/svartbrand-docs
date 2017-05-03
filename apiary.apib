@@ -146,18 +146,95 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
             
             Authorization: "Bearer <token>"
 
+    + Body
+
+            {
+                "_token": "EHzdCt3mLih1NyoHPyDXf0fUioHfTj9JVZEMfafX",
+                "amostra_id": "29217",
+                "tipo_material": "1",
+                "tipo_acabamento": "3",
+                "amst_qtd_pcs": "45",
+                "declaracoes": {
+                    "solicitante": "Gabriel Piccin",
+                    "dim_nom_a": "25",
+                    "dim_nom_b": "25",
+                    "dim_fab_a": "250",
+                    "dim_fab_b": "253",
+                    "dim_fab_c": "6.5",
+                    "grp_abs": "BIIb",
+                    "res_abr": "2",
+                    "tonalidade": "Preto",
+                    "bitola": "5",
+                    "lote_fab": "2103124",
+                    "data_fab": "20/05/2017",
+                    "linha_prod": "5",
+                    "horario_prod": "5:35"
+                },
+                "obs": "",
+                "ensaios": [
+                    "RT_32",
+                    "RT_26",
+                    "RT_28A",
+                ]
+            }
+
 + Response 201 (application/json)
 
     + Headers
 
-            Location: /questions/2
 
     + Body
 
             {
-                "id": "0254817",
-                "registro": "02548/17",
-                "pdf": "<pdf content>"
+                "data":{
+                    "id": "0229217",
+                    "registro": "02292/17",
+                    "empresa": {
+                        "cnpj": "00.000.000/0001-07",
+                        "razaosocial": "ACME Inc Ltda"
+                    },
+                    "amostra": {
+                        "id": "29217",
+                        "marca": "Elizabeth",
+                        "referencia": "HD Basalto Noce"
+                    },
+                    "declaracoes": {
+                        "solicitante": "Fulano de Tal da Silva"
+                    },
+                    "modalidade": "Convênio",
+                    "obs": "",
+                    "data_solicitacao": "01/02/2017",
+                    "data_entrada": null,
+                    "data_abertura": null,
+                    "data_inicio": null,
+                    "data_conclusao": null,
+                    "data_saida": null,
+                    "status": "Em execução",
+                    "ensaios":[
+                        {
+                            "id": "RT_32",
+                            "desc": "Determinação da Expansão por Umidade",
+                            "norma": "NBR 13.818/97 - Anexo X",
+                            "status": "Aguardando execução",
+                            "data_conclusao": null
+                        },
+                        {
+                            "id": "RT_26",
+                            "desc": "Determinação da Resistencia ao Manchamento",
+                            "norma": "NBR 13.818/97 - Anexo Y",
+                            "status": "Aguardando execução",
+                            "data_conclusao": null
+                        },
+                        {
+                            "id": "RT_28A",
+                            "desc": "Determinação da Resistencia ao Ataque Químico",
+                            "norma": "NBR 13.818/97 - Anexo Z",
+                            "status": "Aguardando execução",
+                            "data_conclusao": null
+                        }
+                    ],
+                    "pdf": "<PDF File Content>"
+                }
             }
 
 ### solicitacoes.show [GET /solicitacoes/{id}]
@@ -238,13 +315,16 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
             "data":[
                 {
                     "id":"29217",
-                    "dsc":"HD Piazza Italia (Embramaco)"
+                    "referencia":"HD Piazza Italia",
+                    "marca": "Embramaco"
                 },{
                     "id":"9517",
-                    "dsc":"HD Piazza le Franc (Embramaco)"
+                    "referencia":"HD Piazza le Franc",
+                    "marca": "Embramaco"
                 },{
                     "id":"3577",
-                    "dsc":"Porcelanato Polido Bege (Esther)"
+                    "referencia":"Porcelanato Polido Bege",
+                    "marca": "Esther"
                 }
             ]
         }
