@@ -93,14 +93,12 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
     + Attributes
         + data_solicitacao_begin: dd/mm/yyyy (string, optional)
         + data_solicitacao_end: dd/mm/yyyy (string, optional)
-        + status: 1 (number, optional) - sendo [1] Aguardando amostras | [2] Aguardando conferência | [3] Em execução | [4] Aguardando análise | [5] Finalizado
 
     + Body
 
             {
                 "data_solicitacao_begin": "20/05/2017",
-                "data_solicitacao_end": "20/05/2017",
-                "status": 2
+                "data_solicitacao_end": "20/05/2017"
             }
 
 + Response 200 (application/json)
@@ -115,6 +113,7 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
                     "modalidade":"Avulso",
                     "data_solicitacao":"25/02/2017",
                     "status":"Em execução",
+                    "status_code":3,
                     "pdf":"<PDF File Content>"
                 },{
                     "id":"0219317",
@@ -124,6 +123,7 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
                     "modalidade":"Convênio",
                     "data_solicitacao":"20/03/2017",
                     "status":"Finalizado",
+                    "status_code":5,
                     "pdf":"<PDF File Content>"
                 },{
                     "id":"0039017",
@@ -133,6 +133,7 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
                     "modalidade":"Avulso",
                     "data_solicitacao":"10/05/2017",
                     "status":"Aguardando amostras",
+                    "status_code":2,
                     "pdf":"<PDF File Content>"
                 }
             ]
