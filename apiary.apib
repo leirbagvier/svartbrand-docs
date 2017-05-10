@@ -7,7 +7,46 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
 
 ## Autenticação [/auth]
 
-### api.auth  [POST /auth]
+### api.auth.info [GET /auth]
+
++ Request (application/json)
+    
+    + Headers
+            
+            Authorization: "Bearer <token>"
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "user": {
+                    "cod_empresa": "0000000000000",
+                    "id_pais": "1",
+                    "emp_cidade": "Cincinnati",
+                    "dsc_uf": "OH",
+                    "cep_cep": "10019",
+                    "dsc_empresa": "Badass Company",
+                    "emp_razao_social": "Badass Company Industry Ltd.",
+                    "emp_endereco": "7th Avenue",
+                    "emp_endereco_num": "666",
+                    "emp_compl_endereco": null,
+                    "emp_bairro": "Downtown",
+                    "emp_telefone": "+1 (800) 862-46520",
+                    "emp_telefone2": null,
+                    "emp_fax": null,
+                    "emp_e_mail": "john@badass.com",
+                    "emp_home_page": null,
+                    "emp_tipo_pessoa": "J",
+                    "emp_estadual_rg": "000.000.000.000",
+                    "emp_livre_comercio": "0",
+                    "emp_data_fundacao": null,
+                    "emp_usuario_inc": "sa",
+                    "emp_usuario_alt": "john"
+                }
+            }
+
+### api.auth.login  [POST /auth]
 
 + Request (application/json)
     
@@ -150,7 +189,6 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
     + Body
 
             {
-                "_token": "EHzdCt3mLih1NyoHPyDXf0fUioHfTj9JVZEMfafX",
                 "amostra_id": "29217",
                 "tipo_material": "1",
                 "tipo_acabamento": "3",
@@ -211,6 +249,7 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
                     "data_conclusao": null,
                     "data_saida": null,
                     "status": "Em execução",
+                    "status_code": 3,
                     "ensaios":[
                         {
                             "id": "RT_32",
