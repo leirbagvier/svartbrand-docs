@@ -53,8 +53,8 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
     + Body
 
             {
-                "cod_empresa": "02548157000112",
-                "emp_senha": "emp@senha123"
+                "login": "02548157000112",
+                "passwordara": "emp@senha123"
             }
 
 + Response 201 (application/json)
@@ -341,15 +341,6 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
             
             Authorization: "Bearer <token>"
     
-    + Attributes
-        + cod_empresa: 00000000000000 (string, required)
-
-    + Body
-
-            {
-                "cod_empresa": "00000000000000",
-            }
-
 + Response 200 (application/json)
 
         {
