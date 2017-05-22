@@ -495,3 +495,44 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
                 }
             ]
         }
+        
+## Cadastro de Grupos [/absgrupos]
+
+### api.absgrupos.search [GET /absgrupos/search]
+
++ Request (application/json)
+    
+    + Headers
+            
+            Authorization: "Bearer <token>"
+    
++ Response 200 (application/json)
+
+        {
+            "data":[
+                {
+                    "id": 4,
+                    "dsc_gr_absorcao": "BIIb Q < 90",
+                    "formato": "Quadrado",
+                    "superficie": "Esmaltado",
+                    "acabamento": "Retificado",
+                    "area": "< 90cm2"
+                },
+                {
+                    "id": 6,
+                    "dsc_gr_absorcao": "BIIb Q > 90",
+                    "formato": "Quadrado",
+                    "superficie": "",
+                    "acabamento": "",
+                    "area": "> 90cm2"
+                },
+                {
+                    "id": 8,
+                    "dsc_gr_absorcao": "BIII R > 410",
+                    "formato": "Retangular",
+                    "superficie": "",
+                    "acabamento": "",
+                    "area": "> 410cm2"
+                }
+            ]
+        }
