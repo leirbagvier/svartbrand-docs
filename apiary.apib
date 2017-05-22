@@ -333,6 +333,49 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
 
 ## Amostras [/amostras]
 
+### api.amostras.index [GET /amostras]
+
++ Request (application/json)
+    
+    + Headers
+            
+            Authorization: "Bearer <token>"
+    
++ Response 200 (application/json)
+
+        {
+        "data":[
+            {
+            "id_amostra": 5588,
+            "dsc_amostra": "Branco Gelo",
+            "marca": "ACME Inc",
+            "alert_amostra": 0,
+            "obs_amostra": "",
+            "grp_abs": {
+                "id": 2,
+                "dsc": "BIIb Q < 90",
+                "formato": "Quadrado",
+                "superficie": "",
+                "acabamento": ""
+                }
+            },
+            {
+            "id_amostra": 845,
+            "dsc_amostra": "Preto carvão",
+            "marca": "ACME Inc",
+            "alert_amostra": 1,
+            "obs_amostra": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga nesciunt necessitatibus doloribus architecto porro laboriosam consequuntur cumque odio temporibus labore, excepturi dolor, enim ipsum aliquid, ullam quae fugit quis et.",
+            "grp_abs": {
+                "id": 2,
+                "dsc": "Porc. Q < 90",
+                "formato": "Quadrado",
+                "superficie": "Esmaltado",
+                "acabamento": "Retificado"
+                }
+            }
+        ]
+        }
+
 ### api.amostras.search [GET /amostras/search]
 
 + Request (application/json)
