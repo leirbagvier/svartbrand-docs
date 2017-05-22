@@ -178,6 +178,60 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
             ]
         }
 
+### api.solicitacoes.show [GET /solicitacoes/{id}]
+
++ Request (application/json)
+    
+    + Headers
+            
+            Authorization: "Bearer <token>"
+
++ Response 200 (application/json)
+
+        {
+            "data":{
+                "id": "0229217",
+                "registro": "02292/17",
+                "empresa": {
+                    "cnpj": "00.000.000/0001-07",
+                    "razaosocial": "Cedasa Pisos e revestimentos Ltda"
+                },
+                "prod_marca": "Elizabeth",
+                "prod_ref": "HD Basalto Noce",
+                "modalidade": "Avulso",
+                "data_solicitacao": "01/02/2017",
+                "data_entrada": "10/02/2017",
+                "data_abertura": "12/02/2017",
+                "data_inicio": "23/02/2017",
+                "data_conclusao": "15/03/2017",
+                "data_saida": null,
+                "solicitante": "Fulano de Tal da Silva",
+                "status": "Em execução",
+                "status_code": 3,
+                "ensaios":[
+                    {
+                        "desc": "Determinação da Expansão por Umidade",
+                        "norma": "NBR 13.818/97 - Anexo X",
+                        "status": "Em andamento",
+                        "data_conclusao": null
+                    },
+                    {
+                        "desc": "Determinação da Resistencia ao Manchamento",
+                        "norma": "NBR 13.818/97 - Anexo Y",
+                        "status": "Concluído",
+                        "data_conclusao": "10/03/2017"
+                    },
+                    {
+                        "desc": "Determinação da Resistencia ao Ataque Químico",
+                        "norma": "NBR 13.818/97 - Anexo Z",
+                        "status": "Concluído",
+                        "data_conclusao": "11/03/2017"
+                    }
+                ],
+                "pdf": "<PDF File Content>"
+            }
+        }
+
 ### api.solicitacoes.store [POST /solicitacoes]
 
 + Request (application/json)
@@ -276,60 +330,6 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
                     "pdf": "<PDF File Content>"
                 }
             }
-
-### api.solicitacoes.show [GET /solicitacoes/{id}]
-
-+ Request (application/json)
-    
-    + Headers
-            
-            Authorization: "Bearer <token>"
-
-+ Response 200 (application/json)
-
-        {
-            "data":{
-                "id": "0229217",
-                "registro": "02292/17",
-                "empresa": {
-                    "cnpj": "00.000.000/0001-07",
-                    "razaosocial": "Cedasa Pisos e revestimentos Ltda"
-                },
-                "prod_marca": "Elizabeth",
-                "prod_ref": "HD Basalto Noce",
-                "modalidade": "Avulso",
-                "data_solicitacao": "01/02/2017",
-                "data_entrada": "10/02/2017",
-                "data_abertura": "12/02/2017",
-                "data_inicio": "23/02/2017",
-                "data_conclusao": "15/03/2017",
-                "data_saida": null,
-                "solicitante": "Fulano de Tal da Silva",
-                "status": "Em execução",
-                "status_code": 3,
-                "ensaios":[
-                    {
-                        "desc": "Determinação da Expansão por Umidade",
-                        "norma": "NBR 13.818/97 - Anexo X",
-                        "status": "Em andamento",
-                        "data_conclusao": null
-                    },
-                    {
-                        "desc": "Determinação da Resistencia ao Manchamento",
-                        "norma": "NBR 13.818/97 - Anexo Y",
-                        "status": "Concluído",
-                        "data_conclusao": "10/03/2017"
-                    },
-                    {
-                        "desc": "Determinação da Resistencia ao Ataque Químico",
-                        "norma": "NBR 13.818/97 - Anexo Z",
-                        "status": "Concluído",
-                        "data_conclusao": "11/03/2017"
-                    }
-                ],
-                "pdf": "<PDF File Content>"
-            }
-        }
 
 ## Cadastro de Ensaios [/ensaios]
 
@@ -436,36 +436,65 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
 + Response 200 (application/json)
 
         {
-        "data":[
-            {
-            "id_amostra": 5588,
-            "dsc_amostra": "Branco Gelo",
-            "marca": "ACME Inc",
-            "alert_amostra": 0,
-            "obs_amostra": "",
-            "grp_abs": {
-                "id": 2,
-                "dsc": "BIIb Q < 90",
-                "formato": "Quadrado",
-                "superficie": "",
-                "acabamento": ""
+            "data":[
+                {
+                "id_amostra": 5588,
+                "dsc_amostra": "Branco Gelo",
+                "marca": "ACME Inc",
+                "alert_amostra": 0,
+                "obs_amostra": "",
+                "grp_abs": {
+                    "id": 2,
+                    "dsc": "BIIb Q < 90",
+                    "formato": "Quadrado",
+                    "superficie": "",
+                    "acabamento": ""
+                    }
+                },
+                {
+                "id_amostra": 845,
+                "dsc_amostra": "Preto carvão",
+                "marca": "ACME Inc",
+                "alert_amostra": 1,
+                "obs_amostra": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga nesciunt necessitatibus doloribus architecto porro laboriosam consequuntur cumque odio temporibus labore, excepturi dolor, enim ipsum aliquid, ullam quae fugit quis et.",
+                "grp_abs": {
+                    "id": 2,
+                    "dsc": "Porc. Q < 90",
+                    "formato": "Quadrado",
+                    "superficie": "Esmaltado",
+                    "acabamento": "Retificado"
+                    }
                 }
-            },
-            {
-            "id_amostra": 845,
-            "dsc_amostra": "Preto carvão",
-            "marca": "ACME Inc",
-            "alert_amostra": 1,
-            "obs_amostra": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga nesciunt necessitatibus doloribus architecto porro laboriosam consequuntur cumque odio temporibus labore, excepturi dolor, enim ipsum aliquid, ullam quae fugit quis et.",
-            "grp_abs": {
-                "id": 2,
-                "dsc": "Porc. Q < 90",
-                "formato": "Quadrado",
-                "superficie": "Esmaltado",
-                "acabamento": "Retificado"
+            ]
+        }
+        
+### api.amostras.show [GET /amostras/{id}]
+
++ Request (application/json)
+    
+    + Headers
+            
+            Authorization: "Bearer <token>"
+    
++ Response 200 (application/json)
+
+        {
+            "data":[
+                {
+                "id_amostra": 5588,
+                "dsc_amostra": "Branco Gelo",
+                "marca": "ACME Inc",
+                "alert_amostra": 0,
+                "obs_amostra": "",
+                "grp_abs": {
+                    "id": 2,
+                    "dsc": "BIIb Q < 90",
+                    "formato": "Quadrado",
+                    "superficie": "",
+                    "acabamento": ""
+                    }
                 }
-            }
-        ]
+            ]
         }
 
 ### api.amostras.search [GET /amostras/search]
@@ -495,6 +524,46 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
                 }
             ]
         }
+        
+### api.amostras.store [POST /amostras]
+
++ Request (application/json)
+    
+    + Headers
+            
+            Authorization: "Bearer <token>"
+
+    + Body
+
+            {
+                "dsc_amostra": "Branco Gelo",
+                "marca": "ACME Inc",
+                "alert_amostra": 0,
+                "obs_amostra": "",
+                "grp_abs": 2
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+
+    + Body
+
+            {
+                "id_amostra": 5588,
+                "dsc_amostra": "Branco Gelo",
+                "marca": "ACME Inc",
+                "alert_amostra": 0,
+                "obs_amostra": "",
+                "grp_abs": {
+                    "id": 2,
+                    "dsc": "BIIb Q < 90",
+                    "formato": "Quadrado",
+                    "superficie": "",
+                    "acabamento": ""
+                }
+            }
         
 ## Cadastro de Grupos [/absgrupos]
 
