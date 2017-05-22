@@ -331,7 +331,99 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
             }
         }
 
-## Amostras [/amostras]
+## Cadastro de Ensaios [/ensaios]
+
+### api.ensaios.search [GET /ensaios/search]
+
++ Request (application/json)
+    
+    + Headers
+            
+            Authorization: "Bearer <token>"
+    
++ Response 200 (application/json)
+
+        {
+            "data":[
+                {
+                    "id": "RT_16",
+                    "dsc": "Análise Visual do Aspecto Superficial",
+                    "procedimento": "NBR 13818/97 - Anexo A"
+                },
+                {
+                    "id": "RT_17",
+                    "dsc": "Determinação da Absorção de Água",
+                    "procedimento": "NBR 13818/97 - Anexo B"
+                },
+                {
+                    "id": "RT_18",
+                    "dsc": "Determinação da Carga de Ruptura e Módulo de Resistência à Flexão",
+                    "procedimento": "NBR 13818/97 - Anexo C"
+                },
+                {
+                    "id": "RT_20",
+                    "dsc": "Determinação da Resistência à Abrasão Superficial",
+                    "procedimento": "NBR 13818/97 - Anexo D"
+                },
+                {
+                    "id": "RT_24",
+                    "dsc": "Determinação da Resistência à Abrasão Profunda",
+                    "procedimento": "NBR 13818/97 - Anexo E"
+                },
+                {
+                    "id": "RT_25",
+                    "dsc": "Determinação da Resistência ao Gretamento",
+                    "procedimento": "NBR 13818/97 - Anexo F"
+                },
+                {
+                    "id": "RT_26",
+                    "dsc": "Determinação da Resistência ao Manchamento",
+                    "procedimento": "NBR 13818/97 - Anexo G"
+                },
+                {
+                    "id": "RT_28A",
+                    "dsc": "Determinação da Resistência ao Ataque Químico",
+                    "procedimento": "NBR 13818/97 - Anexo H"
+                },
+                {
+                    "id": "RT_32",
+                    "dsc": "Determinação da Expansão por Umidade",
+                    "procedimento": "NBR 13818/97 - Anexo J"
+                },
+                {
+                    "id": "RT_33",
+                    "dsc": "Determinação do Coeficiente de Dilatação Térmica",
+                    "procedimento": "NBR 13818/97 - Anexo K"
+                },
+                {
+                    "id": "RT_35",
+                    "dsc": "Determinação do Coeficiente de Atrito",
+                    "procedimento": "NBR 13818/97 - Anexo N"
+                },
+                {
+                    "id": "RT_37",
+                    "dsc": "Determinação da Resistência ao Impacto",
+                    "procedimento": "NBR 13818/97 - Anexo Q"
+                },
+                {
+                    "id": "RT_39",
+                    "dsc": "Determinação da Retitude Lateral, da Ortogonalidade, da Curvatura, do Empeno e Dimensões",
+                    "procedimento": "NBR 13818/97 - Anexo S"
+                },
+                {
+                    "id": "RT_40",
+                    "dsc": "Determinação da Dureza MOHS",
+                    "procedimento": "NBR 13818/97 - Anexo V"
+                },
+                {
+                    "id": "RT_42",
+                    "dsc": "Determinação da Resistência à Mancha D'Agua",
+                    "procedimento": "Procedimento Interno"
+                }
+            ]
+        }
+
+## Cadastro de Amostras [/amostras]
 
 ### api.amostras.index [GET /amostras]
 
