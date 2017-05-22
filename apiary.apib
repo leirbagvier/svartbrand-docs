@@ -76,15 +76,15 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
             Authorization: "Bearer <token>"
     
     + Attributes
-        + data_conclusao_begin: dd/mm/yyyy (string, optional)
-        + data_conclusao_end: dd/mm/yyyy (string, optional)
+        + data_begin: dd/mm/yyyy (string, optional)
+        + data_end: dd/mm/yyyy (string, optional)
         + modalidade: AV (string, optional) - sendo [0] Avulso | [1] Convênio | [2] Assistência Técnica | [3] Certificação | [4] Pesquisa & Desenvolvimento
 
     + Body
 
             {
-                "data_conclusao_begin": "20/05/2017",
-                "data_conclusao_end": "20/05/2017",
+                "data_begin": "20/05/2017",
+                "data_end": "20/05/2017",
                 "modalidade": "AV"
             }
 
@@ -130,14 +130,14 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
             Authorization: "Bearer <token>"
     
     + Attributes
-        + data_solicitacao_begin: dd/mm/yyyy (string, optional)
-        + data_solicitacao_end: dd/mm/yyyy (string, optional)
+        + data_begin: dd/mm/yyyy (string, optional)
+        + data_end: dd/mm/yyyy (string, optional)
 
     + Body
 
             {
-                "data_solicitacao_begin": "20/05/2017",
-                "data_solicitacao_end": "20/05/2017"
+                "data_begin": "20/05/2017",
+                "data_end": "20/05/2017"
             }
 
 + Response 200 (application/json)
