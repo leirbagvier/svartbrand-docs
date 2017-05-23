@@ -445,10 +445,11 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
                 "obs_amostra": "",
                 "grp_abs": {
                     "id": 2,
-                    "dsc": "BIIb Q < 90",
+                    "descricao": "BIIb Q < 90",
                     "formato": "Quadrado",
                     "superficie": "",
-                    "acabamento": ""
+                    "acabamento": "",
+                    "area": "> 2500 cm²"
                     }
                 },
                 {
@@ -459,10 +460,11 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
                 "obs_amostra": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga nesciunt necessitatibus doloribus architecto porro laboriosam consequuntur cumque odio temporibus labore, excepturi dolor, enim ipsum aliquid, ullam quae fugit quis et.",
                 "grp_abs": {
                     "id": 2,
-                    "dsc": "Porc. Q < 90",
+                    "descricao": "Porc. Q < 90",
                     "formato": "Quadrado",
                     "superficie": "Esmaltado",
-                    "acabamento": "Retificado"
+                    "acabamento": "Retificado",
+                    "area": "> 2500 cm²"
                     }
                 }
             ]
@@ -479,22 +481,21 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
 + Response 200 (application/json)
 
         {
-            "data":[
-                {
-                "id_amostra": 5588,
-                "dsc_amostra": "Branco Gelo",
-                "marca": "ACME Inc",
-                "alert_amostra": 0,
-                "obs_amostra": "",
-                "grp_abs": {
-                    "id": 2,
-                    "dsc": "BIIb Q < 90",
-                    "formato": "Quadrado",
-                    "superficie": "",
-                    "acabamento": ""
-                    }
-                }
-            ]
+          "data": [
+            {
+              "id": "2985",
+              "referencia": "Bianco GL",
+              "marca": "Elizabeth",
+              "grp_abs": {
+                "id": "69",
+                "descricao": "porc Q > 2500",
+                "superficie": "técnico/natural",
+                "acabamento": "Não Retificado",
+                "formato": "Quadrado",
+                "area": "> 2500 cm²"
+              }
+            }
+          ]
         }
 
 ### api.amostras.search [GET /amostras/search]
@@ -580,28 +581,28 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
         {
             "data":[
                 {
-                    "id": 4,
-                    "dsc_gr_absorcao": "BIIb Q < 90",
+                    "id": "69",
+                    "descricao": "porc Q > 2500",
+                    "superficie": "técnico/natural",
+                    "acabamento": "Não Retificado",
                     "formato": "Quadrado",
-                    "superficie": "Esmaltado",
-                    "acabamento": "Retificado",
-                    "area": "< 90cm2"
+                    "area": "> 2500 cm²"
                 },
                 {
-                    "id": 6,
-                    "dsc_gr_absorcao": "BIIb Q > 90",
+                    "id": "69",
+                    "descricao": "porc Q > 2500",
+                    "superficie": "técnico/natural",
+                    "acabamento": "Não Retificado",
                     "formato": "Quadrado",
-                    "superficie": "",
-                    "acabamento": "",
-                    "area": "> 90cm2"
+                    "area": "> 2500 cm²"
                 },
                 {
-                    "id": 8,
-                    "dsc_gr_absorcao": "BIII R > 410",
-                    "formato": "Retangular",
-                    "superficie": "",
-                    "acabamento": "",
-                    "area": "> 410cm2"
+                    "id": "69",
+                    "descricao": "porc Q > 2500",
+                    "superficie": "técnico/natural",
+                    "acabamento": "Não Retificado",
+                    "formato": "Quadrado",
+                    "area": "> 2500 cm²"
                 }
             ]
         }
