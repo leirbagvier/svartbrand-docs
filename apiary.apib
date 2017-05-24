@@ -78,14 +78,14 @@ Aqui você encontra os detalhes de como realizar chamadas em HTTP para a API *Sv
     + Attributes
         + data_begin: dd/mm/yyyy (string, optional)
         + data_end: dd/mm/yyyy (string, optional)
-        + modalidade: AV (string, optional) - sendo [0] Avulso | [1] Convênio | [2] Assistência Técnica | [3] Certificação | [4] Pesquisa & Desenvolvimento
+        + modalidade: 0 (number, optional) - sendo [0] Todos | [1] Convênio | [2] Avulso | [3] Assistência Técnica | [4] Certificação | [5] Pesquisa & Desenvolvimento
 
     + Body
 
             {
                 "data_begin": "20/05/2017",
                 "data_end": "20/05/2017",
-                "modalidade": "AV"
+                "modalidade": 0
             }
 
 + Response 200 (application/json)
